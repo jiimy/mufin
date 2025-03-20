@@ -5,8 +5,8 @@
       transform: none;
       background: #111;
       border-radius: 50%;
-      width: 48px;
-      height: 48px;
+      @include vw-convert(width, 48px, 1920);
+      @include vw-convert(height, 48px, 1920);
       z-index: 1;
       &:before {
         opacity: 1;
@@ -28,7 +28,7 @@
       bottom: 5.9%;
       right: 10.7%;
       background: #eee;
-      width: 100px;
+      @include vw-convert(width, 100px, 1920);
       height: 2px;
       justify-content: space-between;
       li {
@@ -156,8 +156,10 @@
     }
     .slide-wrap {
       top: 0px;
-      width: 1462px;
+      // width: 1462px;
+      @include vw-convert(width, 1462px, 1920);
       // width: 1135px;
+      @include vw-convert(right, -237px, 1920);
       right: -237px;
       position: absolute;
     }
@@ -173,12 +175,15 @@
     //   width: 100%;
     // }
     .slick-list {
-      padding: 0 329px;
+      // padding: 0 329px;
+      @include vw-convert(padding, 0px 329px, 1920);
     }
     .slick-slide {
-      width: 308px !important; /* 슬라이드의 너비를 308px로 고정 */
+      // width: 308px !important; /* 슬라이드의 너비를 308px로 고정 */
+      @include vw-convert(width, 300px, 1920, true);
       // margin-right: 60px;
-      padding: 0 30px;
+      // padding: 0 30px;
+      @include vw-convert(padding, 0px 30px, 1920);
       box-sizing: content-box;
     }
     .slick-prev {

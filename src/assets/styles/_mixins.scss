@@ -1,11 +1,5 @@
-$breakpoints-tablet : 1366;
-$breakpoints-mobile: 767;
-
-@mixin media-mo() {
-  @media (max-width: ($breakpoints-mobile+"px")) {
-    @content;
-  }
-}
+$breakpoints-tablet: 1280;
+$breakpoints-mobile: 768;
 
 @function pxtovw-mo($target) {
   $vw-content: ($breakpoints-mobile * 0.01) * 1px;
@@ -19,8 +13,8 @@ $breakpoints-mobile: 767;
   @return $result;
 }
 
-@function pxtovw-ta1366($target) {
-  $vw-content: ($breakpoints-tablet * 0.01) * 1px;
+@function pxtovw-ta1366($target, $viewport-width: $breakpoints-tablet) {
+  $vw-content: ($viewport-width * 0.01) * 1px;
   $result: ();
   $length: length($target);
 
@@ -35,7 +29,7 @@ $breakpoints-mobile: 767;
   @return $result;
 }
 
-@mixin pxtovw-1366($value, $size, $mode: "ta", $flag: "false") {
+@mixin vw-convert($value, $size, $viewport-width: $breakpoints-tablet, $flag: "false", $mode: "ta") {
   // mo
   @if ($mode== "mo") {
     @media (max-width: #{$breakpoints-mobile}px) {
@@ -47,16 +41,35 @@ $breakpoints-mobile: 767;
     }
   }
 
-  //pc
-  @media (min-width: ($breakpoints-tablet+"px")) {
-    @if ($flag==true) {
-      #{$value}: $size !important;
+  @if ($mode== "ta") {
+    // $target-width: if($viewport-width, $viewport-width, $breakpoints-tablet);
+
+    @media (min-width: #{$breakpoints-mobile + 1}px) and (max-width: #{$viewport-width}px) {
+      @if ($flag==true) {
+        #{$value}: pxtovw-ta1366($size, $viewport-width) !important;
+      }
+      #{$value}: pxtovw-ta1366($size, $viewport-width);
     }
-    #{$value}: $size;
+
+    @media (min-width: ($viewport-width+"px")) {
+      @if ($flag==true) {
+        #{$value}: $size !important;
+      }
+      #{$value}: $size;
+    }
   }
 }
 
+// p {
+//   @include vw-convert(font-size, 30px);
+//   @include vw-convert(margin, 20px 10px auto);
+// }
 // ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+@mixin media-mo() {
+  @media (max-width: ($breakpoints-mobile+"px")) {
+    @content;
+  }
+}
 
 @mixin dotdotdot($font-size: 14, $lines-to-show: 1, $line-height: 1.5) {
   display: block;

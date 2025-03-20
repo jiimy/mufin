@@ -12,8 +12,6 @@ type Props = {
   type?: 'kv' | 'slide'
 }
 
-
-
 const SlickSlider = ({ type = 'kv' }: Props) => {
   const slideRef = useRef<Slider | null>(null);
 

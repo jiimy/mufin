@@ -31,5 +31,8 @@
     right: 0;
     top: -11px;
     z-index: -1;
+    @include vw-convert(width, 660px, 1920);
+    @include vw-convert(height, 435px, 1920);
+    @include vw-convert(top, -11px, 1920);
   }
 }
