@@ -17,7 +17,7 @@ const TabNav = ({ nav, className, isSelectClassName }: TabNavProps) => {
       {nav.map((item, index) => (
         <button
           key={index}
-          onClick={() => {setActiveIndex(index); console.log('dd', index, activeIndex)}} // 클릭 시 이벤트 핸들러 호출
+          onClick={() => setActiveIndex(index)} // 클릭 시 이벤트 핸들러 호출
           // className={classNames(isSelectClassName, {
           //   [s.is_select]: index === activeIndex
           // })}
