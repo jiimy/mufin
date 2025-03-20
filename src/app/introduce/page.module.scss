@@ -6,6 +6,7 @@
     @include vw-convert(margin-top, 240px);
     @include vw-convert(margin-bottom, 240px);
     :local(.tab_nav) {
+      position: relative;
       width: fit-content;
       margin: 0 auto;
       @include vw-convert(margin-bottom, 60px);

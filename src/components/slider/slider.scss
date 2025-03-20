@@ -146,6 +146,7 @@
       position: relative;
     }
     .slide-wrap {
+      height: 100%;
       top: 0px;
       // width: 1462px;
       @include vw-convert(width, 1462px, 1920);
@@ -155,7 +156,7 @@
     }
     .slick-slider {
       position: relative;
-      @include vw-convert(height, 330px, 1920);
+      height: 100%;
       overflow: hidden;
     }
     .slick-list {
