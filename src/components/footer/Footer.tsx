@@ -8,9 +8,9 @@ import Link from 'next/link';
 const Footer = () => {
   return (
     <div className={s.footer}>
-      <div className={classNames([s.footer_inner], 'flex gap-40')}>
+      <div className={classNames([s.footer_inner], '')}>
         <div>
-          <Logo fill='#909090' width={230} height={54}/>
+          <Logo fill='#909090' className={s.logo}/>
           <ul className={classNames([s.f16], 'flex gap-16 mt-76 mb-32')}>
             <li><Link href="">개인정보 처리방침</Link></li>
             <li><Link href="">이용약관</Link></li>

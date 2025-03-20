@@ -1,18 +1,20 @@
 .desc {
-  padding: 240px 0;
+  @include vw-convert(padding, 240px 0px);
   text-align: center;
   strong {
-    font-size: 72px;;
+    @include vw-convert(font-size, 72px);
     color: #111;
     font-weight: 700;
     line-height: 146%;
     img {
       transform: translate(0px, -10px);
+      @include vw-convert(width, 280px);
+      @include vw-convert(height, 94px);
     }
   }
   p {
-    margin-top: 21px;
-    font-size: 20px;
+    @include vw-convert(margin-top, 21px);
+    @include vw-convert(font-size, 20px);
     font-weight: 400;
   }
   img {

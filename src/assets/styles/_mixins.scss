@@ -29,33 +29,62 @@ $breakpoints-mobile: 768;
   @return $result;
 }
 
-@mixin vw-convert($value, $size, $viewport-width: $breakpoints-tablet, $flag: "false", $mode: "ta") {
-  // mo
-  @if ($mode== "mo") {
-    @media (max-width: #{$breakpoints-mobile}px) {
-      @if ($flag==true) {
-        #{$value}: pxtovw-mo($size) !important;
-      }
+// @mixin vw-convert($value, $size, $viewport-width: $breakpoints-tablet, $flag: false, $mode: "ta") {
+//   // mo
+//   @if ($mode== "mo") {
+//     @media (max-width: #{$breakpoints-mobile}px) {
+//       @if ($flag == true) {
+//         #{$value}: pxtovw-mo($size) !important;
+//       }
 
-      #{$value}: pxtovw-mo($size);
+//       #{$value}: pxtovw-mo($size);
+//     }
+//   }
+
+//   @if ($mode== "ta") {
+//     // $target-width: if($viewport-width, $viewport-width, $breakpoints-tablet);
+
+//     @media (min-width: #{$breakpoints-mobile + 1}px) and (max-width: #{$viewport-width}px) {
+//       @if ($flag == true) {
+//         #{$value}: pxtovw-ta1366($size, $viewport-width) !important;
+//       }
+//       #{$value}: pxtovw-ta1366($size, $viewport-width);
+//     }
+
+//     @media (min-width: ($viewport-width+"px")) {
+//       @if ($flag == true) {
+//         #{$value}: $size !important;
+//       }
+//       #{$value}: $size;
+//     }
+//   }
+// }
+@mixin vw-convert($value, $size, $viewport-width: $breakpoints-tablet, $flag: false, $mode: "ta") {
+  @if ($mode == "mo") {
+    @media (max-width: #{$breakpoints-mobile}px) {
+      @if ($flag == true) {
+        #{$value}: pxtovw-mo($size) !important;
+      } @else {
+        #{$value}: pxtovw-mo($size);
+      }
     }
   }
 
-  @if ($mode== "ta") {
-    // $target-width: if($viewport-width, $viewport-width, $breakpoints-tablet);
-
+  @if ($mode == "ta") {
     @media (min-width: #{$breakpoints-mobile + 1}px) and (max-width: #{$viewport-width}px) {
-      @if ($flag==true) {
+      @if ($flag == true) {
         #{$value}: pxtovw-ta1366($size, $viewport-width) !important;
+      } @else {
+        #{$value}: pxtovw-ta1366($size, $viewport-width);
       }
-      #{$value}: pxtovw-ta1366($size, $viewport-width);
     }
 
-    @media (min-width: ($viewport-width+"px")) {
-      @if ($flag==true) {
+    @media (min-width: #{$viewport-width}px) {
+      @if ($flag == true) {
         #{$value}: $size !important;
+      } @else {
+        #{$value}: $size;
       }
-      #{$value}: $size;
     }
   }
 }
@@ -67,6 +96,11 @@ $breakpoints-mobile: 768;
 // ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 @mixin media-mo() {
   @media (max-width: ($breakpoints-mobile+"px")) {
+    @content;
+  }
+}
+@mixin media-ta() {
+  @media (min-width: #{$breakpoints-mobile + 1}px) and (max-width: #{$breakpoints-tablet}px) {
     @content;
   }
 }

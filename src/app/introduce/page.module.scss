@@ -3,16 +3,16 @@
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
-    margin-top: 240px;
-    margin-bottom: 240px;
+    @include vw-convert(margin-top, 240px);
+    @include vw-convert(margin-bottom, 240px);
     :local(.tab_nav) {
       width: fit-content;
       margin: 0 auto;
-      margin-bottom: 60px;
+      @include vw-convert(margin-bottom, 60px);
       justify-content: center;
       gap: 92px;
       button {
-        font-size: 60px;
+        @include vw-convert(font-size, 60px);
         font-family: "gowun";
         font-weight: 700;
         color: #bbb;
@@ -39,10 +39,10 @@
     :local(.tab_list) {
       li {
         display: flex;
-        margin-bottom: 52px;
+        @include vw-convert(margin-bottom, 52px);
         color: #111;
         font-family: 'pretendard';
-        gap: 40px 52px; 
+        @include vw-convert(gap, 40px 52px);
         text-align: left;
         &:nth-child(2n) {
           flex-direction: row-reverse;
@@ -52,11 +52,11 @@
           margin-bottom: 0;
         }
         strong {
-          font-size: 40px;
+          @include vw-convert(font-size, 40px);
           font-weight: 700;
         }
         p {
-          font-size: 18px;
+          @include vw-convert(font-size, 18px);
           font-weight: 400;
           white-space: pre;
         }

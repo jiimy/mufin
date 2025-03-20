@@ -10,34 +10,50 @@
     }
   }
   .footer_inner {
+    display: flex;
+    @include vw-convert(gap, 40px);
     max-width: 1280px;
     width: 100%;
     margin: 0 auto;
+    justify-content: space-between;
+    @include media-ta {
+      padding: 0 20px;
+    }
+  }
+  .logo {
+    @include vw-convert(width, 230px);
+    @include vw-convert(height, 54px);
   }
   .f16 {
-    li, li a, span {
-      font-size: 16px;
+    li,
+    li a,
+    span {
+      @include vw-convert(font-size, 16px);
     }
   }
   .f12 {
     li {
-      font-size: 12px;
+      @include vw-convert(font-size, 12px);
+      white-space: pre;
     }
   }
 
   .right {
-    width: 428px;
+    @include vw-convert(width, 428px);
     strong {
-      font-size: 24px;
+      @include vw-convert(font-size, 24px);
       font-weight: 600;
     }
     p {
-      margin-top: 12px;
-      font-size: 16px;
+      @include vw-convert(margin-top, 12px);
+      @include vw-convert(font-size, 16px);
     }
     .button {
-      margin-top: 32px;
+      @include vw-convert(margin-top, 32px);
       justify-content: space-between;
+      @include vw-convert(font-size, 18px);
+      @include vw-convert(padding, 0px 24px);
+      @include vw-convert(height, 56px);
     }
   }
 }
