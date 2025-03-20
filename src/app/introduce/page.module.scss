@@ -1,0 +1,66 @@
+.introduce_page {
+  .introduce_tab {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 240px;
+    margin-bottom: 240px;
+    :local(.tab_nav) {
+      width: fit-content;
+      margin: 0 auto;
+      margin-bottom: 60px;
+      justify-content: center;
+      gap: 92px;
+      button {
+        font-size: 60px;
+        font-family: "gowun";
+        font-weight: 700;
+        color: #bbb;
+        &:first-child {
+          &:after {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left:0;
+            right: 0;
+            margin: auto;
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: #dddcdc;
+            content: ''
+          }
+        }
+      }
+      :local(.is_selected) {
+        color: #111;
+      }
+    }
+    :local(.tab_list) {
+      li {
+        display: flex;
+        margin-bottom: 52px;
+        color: #111;
+        font-family: 'pretendard';
+        gap: 40px 52px; 
+        text-align: left;
+        &:nth-child(2n) {
+          flex-direction: row-reverse;
+          text-align: right;
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+        strong {
+          font-size: 40px;
+          font-weight: 700;
+        }
+        p {
+          font-size: 18px;
+          font-weight: 400;
+          white-space: pre;
+        }
+      }
+    }
+  }
+}

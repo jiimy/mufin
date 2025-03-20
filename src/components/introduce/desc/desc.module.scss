@@ -1,0 +1,21 @@
+.desc {
+  padding: 240px 0;
+  text-align: center;
+  strong {
+    font-size: 72px;;
+    color: #111;
+    font-weight: 700;
+    line-height: 146%;
+    img {
+      transform: translate(0px, -10px);
+    }
+  }
+  p {
+    margin-top: 21px;
+    font-size: 20px;
+    font-weight: 400;
+  }
+  img {
+    display: inline-block;
+  }
+}

@@ -1,0 +1,35 @@
+.greeting {
+  position: relative;
+  strong {
+    display: block;
+    margin-bottom: 60px;
+    font-size: 60px;
+    font-weight: 700;
+    color: #111;
+    font-family: 'gowun';
+  }
+  p {
+    font-size: 20px;
+    font-weight: 400;
+    color: #4c4c4c;
+  }
+  a {
+    font-size: 18px;
+    font-weight: 500;
+    color: #111;
+    svg {
+      transform: rotate(-90deg);
+    }
+  }
+  .imgs {
+    display: flex;
+    margin-top: 120px;
+    justify-content: space-around;
+  }
+  .bigProfile {
+    position: absolute;
+    right: 0;
+    top: -11px;
+    z-index: -1;
+  }
+}

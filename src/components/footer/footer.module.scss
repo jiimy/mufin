@@ -1,0 +1,43 @@
+.footer {
+  padding: 120px 0;
+  background: #222;
+  color: #d3d3d3;
+  ul {
+    span {
+      display: inline-flex;
+      margin-right: 4px;
+      color: #7c7c7c;
+    }
+  }
+  .footer_inner {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .f16 {
+    li, li a, span {
+      font-size: 16px;
+    }
+  }
+  .f12 {
+    li {
+      font-size: 12px;
+    }
+  }
+
+  .right {
+    width: 428px;
+    strong {
+      font-size: 24px;
+      font-weight: 600;
+    }
+    p {
+      margin-top: 12px;
+      font-size: 16px;
+    }
+    .button {
+      margin-top: 32px;
+      justify-content: space-between;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 136px;
+  padding: 0 60px;
+}
+.menu {
+  display: flex;
+  align-items: center;
+  > ul {
+    display: flex;
+    li {
+      margin-right: 40px;
+      color: #111111;
+      font-weight: 600;
+      a {
+        font-size: 20px;
+      }
+    }
+    .is_active {
+      color: #8C5947;
+    }
+  }
+}

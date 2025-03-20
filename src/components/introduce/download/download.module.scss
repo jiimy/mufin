@@ -1,0 +1,49 @@
+.download {
+  padding: 252.5px 0;
+  :global(.content) {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px;
+  }
+  .icon {
+    margin-bottom: 40px;
+    width: 96px;
+    height: 96px;
+    background: url('./appicon.png') no-repeat center;
+    background-size: contain;
+  }
+  strong {
+    display: block;
+    margin-bottom: 73px;
+    font-family: 'gowun';
+    font-weight: 700;
+    font-size: 60px;
+  } 
+  p {
+    margin-bottom: 69px;
+    font-size: 18px;
+    color: #4c4c4c;
+    span {
+      font-size: 18px;
+    }
+  }
+  .comment {
+    margin-bottom: 72px;
+    font-family: 'gowun';
+    font-weight: 700;
+    font-size: 20px;
+    span {
+      color: #8C5947;
+    }
+  }
+  .app {
+    width: 360px;
+    height: 802px;
+    background: url('./app_screen.png') no-repeat center;
+    background-size: contain;
+    box-shadow: 0px 12px 52px 0px rgba(0, 0, 0, 0.14);
+  }
+  .button {
+    gap: 8px;
+  }
+}

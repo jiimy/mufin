@@ -1,0 +1,30 @@
+.sponsor {
+  position: relative;
+  background: #F8F4F3;
+  padding: 80px 0;
+  text-align: center;
+  strong {
+    display: block;
+    margin-bottom: 35px;
+    font-family: 'gowun';
+    font-weight: 700;
+    font-size: 40px;
+  }
+  p {
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'gowun';
+    color: #111;
+    span {
+      font-size: inherit;
+      font-family: inherit;
+      color: inherit;
+    }
+  }
+  .button_wrap {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 52px;
+  }
+}
